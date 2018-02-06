@@ -1,0 +1,66 @@
+Wimwipa Phiromruen
+58160013
+Sec.1
+Ex.SearchString
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    function myFunction(){
+      var str = document.getElementById("txt").value;
+      var search = document.getElementById("search").value;
+      var radios = document.getElementsByName("yn");
+      // console.log(str);
+
+        for(var i=0; i<radios.length; i++){
+          if(radios[i].checked){
+              radios = radios[i].value;
+
+          }
+        }
+
+        if(radios=="yes"){
+          var res = str.match(new RegExp(search, "g")).length;
+          document.getElementById("demo").innerHTML = res;
+          // console.log(res);
+
+        }
+        else if(radios=="no"){
+          var res = str.match(new RegExp(search, "gi")).length;
+          document.getElementById("demo").innerHTML = res;
+          // console.log(res);
+        }
+
+
+
+      }
+            </script>
+
+            <h2 ><center>Ex2 - Search String Non Sensitive Case</center></h2>
+            <hr>
+            <center>
+
+                Text Input : <textarea id="txt" name="txt" rows="4" cols="40"></textarea>
+                  <br>
+                  Sensitive Case :
+                <input type="radio" id="yn" name="yn" value="yes"> Yes
+                <input type="radio" id="yn" name="yn" value="no"> No
+                <br>
+                Search : <input type="text" id="search"  name="search" value="">
+                <br>
+
+                <input type="button" id="btn" name="" value="search" onclick="myFunction()">
+
+                <br>
+                Result for Search :  <p id="demo"></p>
+
+                <br>
+
+            </center>
+          </body>
+</html>
