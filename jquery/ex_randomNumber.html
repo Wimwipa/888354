@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+    	input{
+    		margin:5px;
+    	}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+    	$( document ).ready(function(){
+			var nam1 = 0;
+    		var nam2 = 0;
+    		var ans = 0;
+			var result = 0;	
+
+			$("#random").click(function(){
+				nam1 = Math.floor((Math.random() * 1000) + 1);
+    			nam2 = Math.floor((Math.random() * 1000) + 1);
+				
+				$("#nam").html(nam1+" + "+nam2+" = ");
+				result = nam1 + nam2;
+			});
+			$("#answer").click(function(){
+				var ans1 = $("#ans").val();
+				if(ans1 == result){
+					$("#res").html("<span style='color:green;'>That's correct.</span>");
+					}
+				else{
+					$("#res").html("<span style='color:red;'>That's Wrong.The answer is </span>"+result);
+				}
+			});
+		});
+  //   	function random() {
+  //   		var nam1 = Math.floor((Math.random() * 1000) + 1);
+  //   		var nam2 = Math.floor((Math.random() * 1000) + 1);
+  //   		document.getElementById("nam").innerHTML = nam1+" + "+nam2+" = ";
+
+  //   		result = nam1 + nam2;
+		//     document.getElementById("res").innerHTML = result;
+		//     console.log(result);
+		// }
+		// $(document).ready(function(){
+		// 	var nam1 = 0;
+  //   		var nam2 = 0;
+  //   		var ans = 0;
+		// 	var result = 0;
+
+		//     $("#random").click(function(){
+		//     	var nam1 = Math.floor((Math.random() * 1000) + 1);
+  //   			var nam2 = Math.floor((Math.random() * 1000) + 1);
+  //   			$("#nam").html(nam1+" + "+nam2+" = ");
+  //   			result = nam1 + nam2;
+		//     	});
+
+		//     $("#answer")click(function(){
+		//     	var ans_last = $("#ans").val();
+		//     	if (ans_last == result) {
+  //   				$("#res").html("<span style='color:green;'>That's correct.</span>");
+	 //    		}
+	 //    		else{
+	 //    			$("#res").html("<span style='color:red;'>That's Wrong.</span>"+result);
+	 //    		}
+		//     });
+
+		// });
+
+		
+
+		// function answer() {
+		// 	// var nam1 = document.getElementById("nam").value;
+		// 	// var nam2 = document.getElementById("nam").value;
+		// 	var ans = document.getElementById("ans").value;
+		// 	var result = 0;
+		// 	console.log(nam1);
+		//     result = nam1 + nam2;
+		//     document.getElementById("res").innerHTML = result;
+		//     console.log(result);
+		    
+  //   		if (ans == result) {
+  //   			document.getElementById("res").innerHTML = "Good";
+  //   		}
+  //   		else if(ans != result) {
+  //   			document.getElementById("res").innerHTML = result;
+  //   		}
+		// }
+
+
+    </script>
+  </head>
+  <body>
+  	<pre>
+  	Wimwipa phiromruen
+  	58160013 Sec.1</pre>
+    <center>
+      <h2>Ex - Random Number for Answer</h2>
+      <hr>
+      	<button type="button" id="random">Random Number</button>
+      	<br>
+      	<span id="nam"></span>
+      	<input type="text" id="ans">
+      	<br>
+      	<button type="button" id="answer">Send Answer</button>
+      	<br>
+      	<label >Result :</label>
+      	<span id="res"></span>
+      </center>
+  </body>
+</html>
